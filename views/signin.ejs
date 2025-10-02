@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partial/head") %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+</head>
+<body>
+    <%- include("./partial/nev1") %>
+    
+    <% if(locals.error){ %>
+      <div class="container mt-4">       
+      <div class="alert alert-danger" role="alert">
+        <%= locals.error %>
+      </div>
+      </div>
+
+    <% } %>
+
+    <div class="container">
+        <form action="/user/signin" method="POST">
+            <fieldset >
+              <legend>Sign in</legend>
+              <div class="mb-3">
+                <label for="enableTextInput" class="form-label">Email</label>
+                <input type="text" id="enableTextInput" name="email" class="form-control" placeholder="enter">
+              </div>
+              <div class="mb-3">
+                <label for="enableTextInput" class="form-label">Passward</label>
+                <input type="password" id="enableTextInput" name="passward" class="form-control" placeholder="enter">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+    </div>
+
+
+    <%- include("./partial/script") %>
+</body>
+</html>
